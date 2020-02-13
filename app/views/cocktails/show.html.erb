@@ -1,1 +1,21 @@
-<h1>show</h1>
+<div class="container mt-5">
+  <div class="card bg-light my-2 mx-2 p-5">
+    <div class="d-flex justify-content-between">
+      <img src="https://i.picsum.photos/id/866/400/300.jpg" alt="">
+      <div class="flex-grow-1 ">
+        <div class="text-center">
+          <h2><%= @cocktail.name %></h2>
+          <i> <%= link_to "add doses", new_cocktail_dose_path(@cocktail), { class: "btn btn-primary" }%> </i>
+        </div>
+      </div>
+    </div>
+  </div>
+        <% @cocktail.doses.each do |dose| %>
+  <div class="card bg-light my-2 mx-2 p-5">
+    <div class="d-flex justify-content-between">
+          <p><%= dose.description %> </p>
+            <i> <%= link_to "🗑️", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %> </i>
+    </div>
+  </div>
+        <% end %>
+</div>
