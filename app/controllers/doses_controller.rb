@@ -1,4 +1,4 @@
-class DosesController < ActionController::Base
+class DosesController < ApplicationController
   before_action :set_dose, only: %i[new create]
 
   def new
