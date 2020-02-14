@@ -1,0 +1,10 @@
+.card-move {
+  position: relative;
+  bottom: 0px;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.15) !important;
+    bottom: 5px;
+  }
+}

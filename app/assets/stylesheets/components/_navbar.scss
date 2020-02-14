@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: rgba(117, 190, 218, 0.0);
+  display: flex;
+    .nav-link {
+      color: white !important;
+      border: white solid 1px;
+      border-radius: 6px;
+    }
 }
 
 .navbar-lewagon .navbar-collapse {
