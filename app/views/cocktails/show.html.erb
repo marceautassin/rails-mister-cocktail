@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="card bg-light my-2 mx-2 p-5">
     <div class="d-flex justify-content-between">
-      <img src="https://i.picsum.photos/id/866/400/300.jpg" alt="">
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="flex-grow-1 ">
         <div class="text-center">
           <h2><%= @cocktail.name %></h2>
@@ -20,4 +20,3 @@
   </div>
         <% end %>
 </div>
- <%= console %>
