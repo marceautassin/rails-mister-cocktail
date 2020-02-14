@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -13,6 +15,8 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(params_cocktail)
+
+    @cocktail.photo.attached? ? @cocktail.photo.key : @cocktail.photo = Cloudinary::Uploader.upload("moscowmule.jpg")
 
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
