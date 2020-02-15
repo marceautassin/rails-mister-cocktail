@@ -3,7 +3,11 @@
   <div class="row justify-content-center">
     <% @cocktails.each do |cocktail| %>
     <div class="card shadow-sm mx-2 my-3 card-move" style="width: 18rem;">
-      <%= cl_image_tag cocktail.photo.key, height: 300, width: 285 , crop: :fill %>
+      <% if cocktail.photo.attached? %>
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 285 , crop: :fill%>
+      <% else %>
+        <%= cl_image_tag("qkL2ms5KRuuC43mdGNeNXp4M",height: 300, width: 285 , crop: :fill) %>
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
       </div>

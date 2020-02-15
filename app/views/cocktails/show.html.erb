@@ -1,7 +1,11 @@
 <div class="container mt-5">
   <div class="card bg-light my-2 mx-2 p-5">
     <div class="d-flex justify-content-between">
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 285 , crop: :fill%>
+      <% else %>
+        <%= cl_image_tag("qkL2ms5KRuuC43mdGNeNXp4M",height: 300, width: 285 , crop: :fill) %>
+      <% end %>
       <div class="flex-grow-1 ">
         <div class="text-center">
           <h2><%= @cocktail.name %></h2>
